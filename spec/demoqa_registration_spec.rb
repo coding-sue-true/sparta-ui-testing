@@ -1,5 +1,5 @@
 require 'spec_helper'
-require_relative '../selenium_demoqa_registration'
+require_relative '../selenium_demoqa_registration.rb'
 
 describe 'testing the demoqa registration page' do
 
@@ -30,19 +30,22 @@ describe 'testing the demoqa registration page' do
       expect(@driver.select_hobby_option).to be(true)
     end
 
-    it 'should have a country default of Afhghanistan' do
+    it 'should have a country default of Afghanistan' do
+      expect(@driver.get_selected_country).to eq("Afghanistan")
     end
 
     it 'accept a new DOB' do
-
+      expect(@driver.dob_month_list_select).to eq true
+      expect(@driver.dob_day_list_select).to eq true
+      expect(@driver.dob_year_list_select).to eq true
     end
 
     it 'should accept a new country value' do
-
+      expect(@driver.country_dropdown_list_select).to eq true
     end
 
     it 'should accept a valid phone number' do
-      expect(@driver.get_phone_number_field_value).to be_kind_of(Float)
+      expect(@driver.get_phone_number_field_value).to be_kind_of(String)
     end
 
     it 'should accept a username' do
