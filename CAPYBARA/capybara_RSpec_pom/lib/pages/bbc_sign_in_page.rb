@@ -6,10 +6,11 @@ class BbcSignInPage
   SIGN_IN_PAGE_URL = 'https://www.bbc.co.uk/signin'
   USERNAME_FIELD_ID = 'user-identifier-input'
   PASSWORD_FIELD_ID = 'password-input'
-  WRONG_PASSWORD_ERROR_TEXT = 'Sorry, we can’t find an account with that username. If you\'re over 13, try your email address instead or '
-  WRONG_PASSWORD_ERROR_ID = 'form-message-username'
+  WRONG_USERNAME_ERROR_TEXT = 'Sorry, we can’t find an account with that username. If you\'re over 13, try your email address instead or '
+  WRONG_USERNAME_ERROR_ID = 'form-message-username'
   REGISTER_LINK_TEXT = 'Register now'
   SUBMIT_BUTTON_ID = 'submit-button'
+  WRONG_PASSWORD_TEXT = 'form-message-password'
 
   def visit_register_page
     visit(SIGN_IN_PAGE_URL)
@@ -47,8 +48,12 @@ class BbcSignInPage
     click_link(REGISTER_LINK_TEXT)
   end
 
+  def incorrect_username_text
+    find(:id, WRONG_USERNAME_ERROR_ID).text
+  end
+
   def incorrect_password_text
-    find(:id, WRONG_PASSWORD_ERROR_ID).text
+    find(:id, WRONG_PASSWORD_TEXT).text
   end
 
 end
