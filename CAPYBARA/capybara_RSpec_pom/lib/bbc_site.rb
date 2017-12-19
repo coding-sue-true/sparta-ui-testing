@@ -1,5 +1,6 @@
 require_relative 'pages/bbc_homepage'
 require_relative 'pages/bbc_sign_in_page'
+require_relative 'pages/bbc_signup_page'
 
 class BbcSite
 
@@ -9,6 +10,10 @@ class BbcSite
 
   def bbc_sign_in_page
     BbcSignInPage.new
+  end
+
+  def bbc_sign_up_page
+    BbcSignUpPage.new
   end
 
 end
