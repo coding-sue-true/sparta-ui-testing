@@ -15,7 +15,7 @@ describe 'testing the demoqa registration page' do
     end
 
     it 'should accept a first name' do
-      expect(@driver.first_name_field_displayed).to be (true)
+      expect(@driver.first_name_field_displayed).to be(true)
     end
 
     it 'should accept a last name' do
@@ -35,13 +35,13 @@ describe 'testing the demoqa registration page' do
     end
 
     it 'accept a new DOB' do
-      expect(@driver.dob_month_list_select).to eq true
-      expect(@driver.dob_day_list_select).to eq true
-      expect(@driver.dob_year_list_select).to eq true
+      expect(@driver.dob_month_list_select('11')).to be(true)
+      expect(@driver.dob_day_list_select('12')).to be(true)
+      expect(@driver.dob_year_list_select('1993')).to be(true)
     end
 
     it 'should accept a new country value' do
-      expect(@driver.country_dropdown_list_select).to eq true
+      expect(@driver.country_dropdown_list_select('Portugal')).to be(true)
     end
 
     it 'should accept a valid phone number' do

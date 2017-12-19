@@ -21,7 +21,7 @@ class SeleniumDemoReg
   PASSWORD_FIELD = 'password_2'# id
   CONFIRM_PASSWORD_FIELD =  'confirm_password_password_2'# id
   SUBMIT_BUTTON = 'pie_submit'# name
-  REGISTRATION_CONFIRMATION = #class
+  REGISTRATION_CONFIRMATION = 'piereg_message'#class
 
   def initialize
     # set up driver
@@ -223,35 +223,24 @@ class SeleniumDemoReg
   end
 
   def check_registration_successful
+    @chrome_driver.find_element(:class, REGISTRATION_CONFIRMATION).displayed?
   end
 end
 
 rspec_practice = SeleniumDemoReg.new
 rspec_practice.access_registration_form
 rspec_practice.set_first_name_field('Soraia')
-
 rspec_practice.set_last_name_field('Carmo')
-sleep 3
 rspec_practice.select_marital_option
-sleep 3
 rspec_practice.select_hobby_option
-sleep 3
 rspec_practice.country_dropdown_list_select('Portugal')
-sleep 3
-rspec_practice.dob_month_list_select(11)
-rspec_practice.dob_day_list_select(12)
-rspec_practice.dob_year_list_select(1993)
+rspec_practice.dob_month_list_select('11')
+rspec_practice.dob_day_list_select('12')
+rspec_practice.dob_year_list_select('1993')
 rspec_practice.set_phone_number_field("07840873640")
-sleep 3
-rspec_practice.set_user_name_field('soraia1234')
-sleep 3
-rspec_practice.set_email_field('soneofoje@ifo.com')
-sleep 3
+rspec_practice.set_user_name_field('soraia123456c')
+rspec_practice.set_email_field('soneofojeeec@ifo.com')
 rspec_practice.set_about_yourself_field('ueifiuebf skbeiuf ehfbieufiue wwebiewu')
-sleep 3
 rspec_practice.set_password_field('abcde1234')
-sleep 3
 rspec_practice.set_confirmation_password_field('abcde1234')
-sleep 3
 rspec_practice.click_submit
-sleep 20
