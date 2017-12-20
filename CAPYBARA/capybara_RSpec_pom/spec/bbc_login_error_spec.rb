@@ -27,8 +27,5 @@ describe 'Incorrect user details produces valid error' do
       @bbc_site.bbc_sign_in_page.click_sign_in_button
       expect(@bbc_site.bbc_sign_in_page.incorrect_password_text).to eq("Sorry, that password is too short. It needs to be six characters or more.")
     end
-
-    
-
   end
 end

@@ -6,7 +6,7 @@ describe 'Incorrect user details produces successful failure' do
     Capybara.current_session.driver.quit
   end
 
-  context 'it produce an error if one or more fields are not filled' do
+  context 'it produce an error if one or more fields are not filled, or filled improperly' do
 
     it 'should introduce correctly the DOB fields' do
       @bbc_site = BbcSite.new
