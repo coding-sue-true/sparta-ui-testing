@@ -66,7 +66,7 @@ class SeleniumDemoReg
 
   # Marital option management - Difficulty Medium
 
-  def select_marital_option
+  def select_marital_option(option)
     ran_num = rand(2)
     status = @chrome_driver.find_elements(:name, "radio_4[]")
     status.each do |stat|
@@ -80,7 +80,7 @@ class SeleniumDemoReg
 
   # hobby option management - Difficulty Medium
 
-  def select_hobby_option
+  def select_hobby_option(option)
     ran_num = rand(2)
     status = @chrome_driver.find_elements(:name, "checkbox_5[]")
     status.each do |stat|
@@ -229,4 +229,4 @@ end
 
 rspec_practice = SeleniumDemoReg.new
 # rspec_practice.access_registration_form
-rspec_practice.click_submit
+# rspec_practice.click_submit
